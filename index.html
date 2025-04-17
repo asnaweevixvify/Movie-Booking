@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <h1 class="h1-main"> โปรแกรมจองที่นั่งโรงภาพยนตร์</h1>
+    <div class="choosemoviecontainer">
+        <h1 class="topic">เลือกภาพยนตร์</h1>
+        <select class="select" id="select">
+            <option 
+                disabled selected hidden value="none" <h2>กรุณาเลือกภาพยนตร์</h2>
+            </option>
+            <option value="250">
+                <h2 id="ธี่หยด2">ธี่หยด2</h2>
+                <h2>|</h2>
+                <h2 id="movieprice">฿250</h2>
+            </option>
+            <option value="220" >
+                <h2>ตาคลี เจเนซิส</h2>
+                <h2>|</h2>
+                <h2 id="movieprice" >฿220</h2>
+            </option>
+            <option value="180">
+                <h2>วัยหนุ่ม 2544</h2>
+                <h2>|</h2>
+                <h2 id="movieprice">฿180</h2>
+            </option>
+            <option value="150">
+                <h2>Attack 13</h2>
+                <h2>|</h2>
+                <h2 id="movieprice">฿150</h2>
+            </option>
+            <option value="200">
+                <h2>มือปืน</h2>
+                <h2>|</h2>
+                <h2 id="movieprice">฿200</h2>
+            </option>
+        </select>
+    </div>
+    <div class="statuscontainer">
+        <div class="blank">
+            <div class="seatblank"></div>
+            <h2 class="seatstatus">ว่าง</h2>
+        </div>
+        <div class="myseat">
+            <div class="seatmine"></div>
+            <h2 class="seatstatus">ที่นั่งของเรา</h2>
+        </div>
+        <div class="busy">
+            <div class="seatbusy"></div>
+            <h2 class="seatstatus">ไม่ว่าง</h2>
+        </div>
+    </div>
+
+    <div class="screen">
+        <h2 class="screentext">Screen</h2>
+    </div>
+    <div class="seatall">
+        <div class="col1">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+        
+        <div class="col2">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+
+        <div class="col3">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+
+        <div class="col4">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+
+        <div class="col5">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+
+        <div class="col6">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+
+        <div class="col7">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+
+        <div class="col8">
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+            <div class="seatblank" onclick="choose(this)"></div>
+        </div>
+    </div>
+    <div class="userstatus">
+        <h1 class="userstatusseat" id="seatcount">เลือกจำนวน 0 ที่นั่ง</h1>
+        <h1 class="userstatuspay" id="price">ยอดชำระเงิน 0 บาท</h1>
+    </div>
+    <script src="app.js"></script>
+</body>
