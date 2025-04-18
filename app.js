@@ -4,7 +4,9 @@ let seatPrice = document.getElementById('price')
 let select = document.getElementById('select')
 let option = document.querySelectorAll('option')
 let moviePrice
-let i = 0;
+let i;
+
+
 
 window.onload=function(){
     const seatpRice = localStorage.getItem('movieprice')
@@ -14,22 +16,41 @@ window.onload=function(){
     if(seatMINE && Array.isArray(seatMINE)){
         seatMINE.forEach(index=>{
             seatAll[index].classList.remove('seatblank');
-            seatAll[index].classList.add('seatbusy');
+            seatAll[index].classList.add('seatmine');
+            i = parseInt(couNt)
+            moviePrice = parseInt(seatpRice)
+            seatAll.forEach(seat =>{
+                seat.style.pointerEvents = 'auto';
+                seat.addEventListener('click',function(){
+                    let seatSelect = items.classList.contains('seatmine');
+                    if(seatSelect){
+                        i+=1
+                    }
+                    else{
+                        i-=1
+                    }
+                    seatCount.innerHTML=`เลือกจำนวน ${i} ที่นั่ง`
+                    seatPrice.innerHTML=`ยอดชำระเงิน ${Number(moviePrice)*i} บาท`
+                    saveMode()
+                })
+            })
         })
     }
     if(!couNt){
         couNt=0
     }
     seatCount.innerHTML=`เลือกจำนวน ${couNt} ที่นั่ง`
-    seatPrice.innerHTML=`ยอดชำระเงิน ${Number(seatpRice)*couNt} บาท`
+    seatPrice.innerHTML=`ยอดชำระเงิน ${seatpRice*couNt} บาท`
     if(chooSe){
         select.value=chooSe
     }
 }
-
 seatAll.forEach(seat => {
     seat.style.pointerEvents = 'none';
 });
+
+
+
 
 select.addEventListener('change',function(){
     if(select.value === 'none'){
@@ -54,6 +75,9 @@ select.addEventListener('change',function(){
     seatPrice.innerHTML=`ยอดชำระเงิน ${Number(moviePrice)*i} บาท`
     saveMode()
 })
+
+
+
 function choose(e){
    if(e.classList.contains('seatblank')){
         e.classList.replace('seatblank','seatmine')
@@ -79,6 +103,9 @@ seatAll.forEach(items =>{
     })
 })
 
+
+
+
 function saveMode(){
     let arr= []
     seatAll.forEach((e,index)=>{
@@ -91,4 +118,3 @@ function saveMode(){
     localStorage.setItem('choose',select.value)
     localStorage.setItem('seatMine',JSON.stringify(arr))
 }
-
